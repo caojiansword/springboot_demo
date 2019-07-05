@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <title>AdminLTE 2 | Data Tables</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"></meta>
+  <link rel="stylesheet" href="../../css/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" href="../../css/Ionicons/css/ionicons.min.css"></link>
+  <link rel="stylesheet" href="../../css/datatables.net-bs/css/dataTables.bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/AdminLTE.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/skins/_all-skins.min.css"></link>
+  <link rel="stylesheet" type="text/css" href="../../css/fenlei.css"></link>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+<!--主页面左边菜单和上部分横条公共部分-->
+<script src="../../tables/common/left.js"></script>
+<!--结束-->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+       <div class="box" style="overflow: hidden;">
+            <h3 class="box-title" style="margin-left: 30px;">分类管理</h3>
+            <div class="box-header" > 
+                <button type="button" id="deletefenlei" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">删除</button>
+             <button type="button" id="updatefenlei" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">编辑</button>
+               <button type="button" id="addfenlei" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">添加</button>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>选择</th>
+                  <th>节点语ID</th>
+                  <th>分类名称</th>
+                  <th>上级分类</th>
+                  <th>排序号</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>0.1</td>
+                  <td>技能</td>
+                  <td></td>
+                  <td>0</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>0.2</td>
+                  <td>初级技能</td>
+                  <td></td>
+                  <td>0</td>
+                </tr>
+                </tfoot>     
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <div class="control-sidebar-bg"></div>
+</div>
+<script src="../../js/jquery/dist/jquery.min.js"></script>
+<script src="../../js/fastclick/lib/fastclick.js"></script>
+<script src="../../js/adminlte.min.js"></script>
+
+
+<!--分类管理 添加按钮-->
+<script type="text/javascript">  
+    $('#addfenlei').click(function(){
+      $("#Maskadd").css("display","block");
+      $("#maskRadd").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#Maskadd").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#Maskadd").css("display","none");
+    });
+    })
+  </script>
+<div id="Maskadd" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      添加分类
+    </div>
+    <div class="OneHeng"></div>
+      <div class="maskR" id="maskRAdd">
+          <div >
+            <label>分类名称：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>上级分类：</label>
+            <input type="text" />
+          </div>
+
+</div>
+        <div class="TwoHeng"> </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--分类管理 添加按钮 End-->
+
+<!--分类管理  删除按钮-->
+<script type="text/javascript">  
+    $('#deletefenlei').click(function(){
+      $("#MaskDelete").css("display","block");
+      $("#maskRDelete").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskDelete").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskDelete").css("display","none");
+    });
+    })
+  </script>
+<div id="MaskDelete" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      删除分类
+    </div>
+    <div class="OneHeng"></div>
+        <div class="TwoHeng"> </div>
+         <div>
+            <h2 class="delete">您确定要删除吗？</h2>
+             
+          </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--分类管理 删除按钮-->
+
+<!--分类管理 编辑按钮-->
+<script type="text/javascript">  
+    $('#updatefenlei').click(function(){
+      $("#MaskEdit").css("display","block");
+      $("#maskREdit").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskEdit").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskEdit").css("display","none");
+    });
+    })
+  </script>
+<div id="MaskEdit" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      修改分类
+    </div>
+    <div class="OneHeng"></div>
+      <div class="maskR" id="maskRAdd">
+          <div >
+            <label>分类名称：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>上级分类：</label>
+            <input type="text" />
+          </div>
+
+</div>
+        <div class="TwoHeng"> </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--分类管理 编辑按钮 End-->
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <title>AdminLTE 2 | Data Tables</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"></meta>
+  <link rel="stylesheet" href="../../css/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" href="../../css/Ionicons/css/ionicons.min.css"></link>
+  <link rel="stylesheet" href="../../css/datatables.net-bs/css/dataTables.bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/AdminLTE.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/skins/_all-skins.min.css"></link>
+  <link rel="stylesheet" type="text/css" href="../../css/fenlei.css"></link>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+ <!--主页面左边菜单和上部分横条公共部分-->
+  <script src="../../tables/common/left.js"></script>
+ <!--结束-->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box" style="overflow: hidden;">
+            <h3 class="box-title" style="margin-left: 30px;">部门管理</h3>
+            <div class="box-header" > 
+                <button type="button" id="deletedept" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">删除</button>
+             <button type="button" id="updatedept" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">编辑</button>
+               <button type="button" id="adddept" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">添加</button>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>选择</th>
+                  <th>序号</th>
+                  <th>部门名称</th>
+                  <th>提成比例</th>
+                  <th>上级部门</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>1</td>
+                  <td>集团总部</td>
+                  <td>杭州数据中心</td>
+                  <td>无</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>2</td>
+                  <td>产品部</td>
+                  <td>30%</td>
+                  <td>产品部</td>
+                </tr>
+                </tfoot>     
+              <tfoot>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>3</td>
+                  <td>开发部</td>
+                  <td>40%</td>
+                  <td>开发部</td>
+                </tr>
+                </tfoot> 
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<script src="../../js/jquery/dist/jquery.min.js"></script>
+<script src="../../js/fastclick/lib/fastclick.js"></script>
+<script src="../../js/adminlte.min.js"></script>
+
+
+<!--部门管理 添加按钮-->
+<script type="text/javascript">  
+    $('#adddept').click(function(){
+      $("#Maskadd").css("display","block");
+      $("#maskRadd").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#Maskadd").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#Maskadd").css("display","none");
+    });
+    })
+  </script>
+<div id="Maskadd" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      添加部门
+    </div>
+    <div class="OneHeng"></div>
+      <div class="maskR" id="maskRAdd">
+          <div>
+            <label>部门名称：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>部门类型：</label>
+              <select>
+                  <option>生产部</option>
+                    <option>开发部</option>
+              </select>
+          </div>
+           <div>
+            <label>上级部门：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>提成比例：</label>
+             <input type="text"  />
+          </div>
+</div>
+        <div class="TwoHeng"> </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--分类管理 添加按钮 End-->
+
+<!--部门管理  删除按钮-->
+<script type="text/javascript">  
+    $('#deletedept').click(function(){
+      $("#MaskDelete").css("display","block");
+      $("#maskRDelete").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskDelete").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskDelete").css("display","none");
+    });
+    })
+  </script>
+<div id="MaskDelete" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      删除部门
+    </div>
+    <div class="OneHeng"></div>
+        <div class="TwoHeng"> </div>
+         <div>
+            <h2 class="delete">您确定要删除吗？</h2>
+             
+          </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--部门管理 删除按钮-->
+
+<!--部门管理 编辑按钮-->
+<script type="text/javascript">  
+    $('#updatedept').click(function(){
+      $("#MaskEdit").css("display","block");
+      $("#maskREdit").css("display","block");
+    $(".QuXiaoButton").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskEdit").css("display","none");
+    });
+     $(".fa-times").click(function(){//点击遮罩遮罩隐藏
+      $("#MaskEdit").css("display","none");
+    });
+    })
+  </script>
+<div id="MaskEdit" class="Mask" >
+  <div class="Box">
+    <div class="Name">
+      <div class="fa fa-times"  style="float: right;margin-right: 10px;font-size: 22px;color:#707070;"></div>
+      修改部门
+    </div>
+    <div class="OneHeng"></div>
+      <div class="maskR" id="maskRAdd">
+           <div>
+            <label>部门名称：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>部门类型：</label>
+              <select>
+                  <option>生产部</option>
+                    <option>开发部</option>
+              </select>
+          </div>
+           <div>
+            <label>上级部门：</label>
+            <input type="text"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>提成比例：</label>
+             <input type="text"  />
+          </div>
+
+</div>
+        <div class="TwoHeng"> </div>
+            <div >
+           <button class="button">
+            确定
+           </button>
+           <button  class="QuXiaoButton">
+            取消
+           </button>
+            </div>
+  </div>
+ </div>
+</div>
+<!--部门管理 编辑按钮 End-->
+</body>
+</html>

@@ -1,0 +1,10 @@
+package com.sunyard.service;
+
+import java.util.List;
+
+import com.sunyard.model.User;
+
+public interface LoginService {
+    //查询登录是否正确
+	int selectByExample(String username, String password);
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+  <title>AdminLTE 2 | Data Tables</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"></meta>
+  <link rel="stylesheet" href="../../css/bootstrap/dist/css/bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" href="../../css/Ionicons/css/ionicons.min.css"></link>
+  <link rel="stylesheet" href="../../css/datatables.net-bs/css/dataTables.bootstrap.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/AdminLTE.min.css"></link>
+  <link rel="stylesheet" href="../../css/dist/css/skins/_all-skins.min.css"></link>
+  <link rel="stylesheet" type="text/css" href="../../css/fenlei.css"></link>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+ <!--主页面左边菜单和上部分横条公共部分-->
+  <script src="../../tables/common/left.js"></script>
+ <!--结束-->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box" style="overflow: hidden;">
+            <h3 class="box-title" style="margin-left: 30px;">机构管理</h3>
+            <div class="box-header" > 
+                <button type="button" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">删除</button>
+             <button type="button" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">编辑</button>
+               <button type="button" class="btn btn-block btn-info" style="width: 50px;display: block;float: right;margin-top: -30px;margin-left: 20px;">添加</button>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>选择</th>
+                  <th>节点语ID</th>
+                  <th>组织名称</th>
+                  <th>父节点名称</th>
+                  <th>排序号</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>0.1</td>
+                  <td>保障部</td>
+                  <td>杭州数据中心</td>
+                  <td>0</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>0.2</td>
+                  <td>根节点</td>
+                  <td>滨江数据中心</td>
+                  <td>1</td>
+                </tr>
+                </tfoot>     
+              <tfoot>
+                <tr>
+                  <td><input type="checkbox"/></td>
+                  <td>0.3</td>
+                  <td>生产部</td>
+                  <td>滨江数据中心</td>
+                  <td>2</td>
+                </tr>
+                </tfoot> 
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<script src="../../js/jquery/dist/jquery.min.js"></script>
+<script src="../../js/fastclick/lib/fastclick.js"></script>
+<script src="../../js/adminlte.min.js"></script>
+</body>
+</html>
